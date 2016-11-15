@@ -4,13 +4,22 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://bluejet.github.io/atom.xml" rel="self"/>
   <link href="http://bluejet.github.io/"/>
-  <updated>2016-11-15T16:08:30+08:00</updated>
+  <updated>2016-11-15T16:26:07+08:00</updated>
   <id>http://bluejet.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Will Wang]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Octopress]]></title>
+    <link href="http://bluejet.github.io/blog/2016/11/15/hello-octopress/"/>
+    <updated>2016-11-15T16:14:07+08:00</updated>
+    <id>http://bluejet.github.io/blog/2016/11/15/hello-octopress</id>
+    <content type="html"><![CDATA[<p>Hello Github!</p>
+]]></content>
+  </entry>
   
 </feed>
