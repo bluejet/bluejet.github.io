@@ -5,7 +5,7 @@ date: 2017-03-08 16:20:55 +0800
 comments: true
 categories: html5 safari audio 
 ---
-<p>Test - 再见二丁目</p>
+<p>Test - 听听看，猜猜看</p>
 <audio id="music" autoplay preload loop controls></audio>
 <head>
 <script>
