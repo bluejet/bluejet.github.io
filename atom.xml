@@ -4,7 +4,7 @@
   <title><![CDATA[有故事的地方]]></title>
   <link href="http://bluejet.github.io/atom.xml" rel="self"/>
   <link href="http://bluejet.github.io/"/>
-  <updated>2017-03-08T17:47:24+08:00</updated>
+  <updated>2017-03-08T18:19:02+08:00</updated>
   <id>http://bluejet.github.io/</id>
   <author>
     <name><![CDATA[W·Wang]]></name>
@@ -18,7 +18,7 @@
     <link href="http://bluejet.github.io/blog/2017/03/08/audio-tag-does-not-work-in-safari/"/>
     <updated>2017-03-08T16:20:55+08:00</updated>
     <id>http://bluejet.github.io/blog/2017/03/08/audio-tag-does-not-work-in-safari</id>
-    <content type="html"><![CDATA[<p>Test - 再见二丁目</p>
+    <content type="html"><![CDATA[<p>Test - 听听看，猜猜看</p>
 
 
 <p><audio id="music" autoplay preload loop controls></audio>
