@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[有故事的地方]]></title>
-  <link href="http://bluejet.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Safari | 有故事的地方]]></title>
+  <link href="http://bluejet.github.io/blog/categories/safari/atom.xml" rel="self"/>
   <link href="http://bluejet.github.io/"/>
   <updated>2017-03-08T17:47:24+08:00</updated>
   <id>http://bluejet.github.io/</id>
@@ -113,15 +113,6 @@
 })();
 &lt;/script&gt;
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Hello Octopress]]></title>
-    <link href="http://bluejet.github.io/blog/2016/11/15/hello-octopress/"/>
-    <updated>2016-11-15T16:14:07+08:00</updated>
-    <id>http://bluejet.github.io/blog/2016/11/15/hello-octopress</id>
-    <content type="html"><![CDATA[<p>Hello Github!</p>
 ]]></content>
   </entry>
   
