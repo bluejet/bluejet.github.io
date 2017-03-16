@@ -4,7 +4,7 @@
   <title><![CDATA[有故事的地方]]></title>
   <link href="http://bluejet.github.io/atom.xml" rel="self"/>
   <link href="http://bluejet.github.io/"/>
-  <updated>2017-03-08T18:19:02+08:00</updated>
+  <updated>2017-03-16T19:58:33+08:00</updated>
   <id>http://bluejet.github.io/</id>
   <author>
     <name><![CDATA[W·Wang]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to Upload Jar to Nexus3?]]></title>
+    <link href="http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/"/>
+    <updated>2017-03-16T19:42:48+08:00</updated>
+    <id>http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3</id>
+    <content type="html"><![CDATA[<h1>Prepare pom.xml</h1>
+
+<pre><code>&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;oracle&lt;/groupId&gt;
+    &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/project&gt;
+</code></pre>
+
+<ol>
+<li><p>Upload pom.xml
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file pom.xml http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.pom</code></p></li>
+<li><p>Upload jar
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file ojdbc6-1.0.jar http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.jar</code></p></li>
+</ol>
+
+
+<h1>Exception</h1>
+
+<p>Resp: HTTP/1.1 413 Request Entity Too Large</p>
+
+<pre><code>vi /etc/nginx.conf
+# added the following lines in http section
+client_max_body_size 16M;
+client_body_buffer_size 128K;
+
+nginx -s reload
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Audio Tag Does Not Work in Safari]]></title>

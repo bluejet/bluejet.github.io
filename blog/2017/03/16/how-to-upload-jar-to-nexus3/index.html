@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Hello Octopress - 有故事的地方</title>
+  <title>How to Upload Jar to Nexus3? - 有故事的地方</title>
   <meta name="author" content="W·Wang">
 
   
-  <meta name="description" content="Hello Github!
-">
+  <meta name="description" content="Prepare pom.xml &lt;project&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;oracle&lt;/groupId&gt; &lt;artifactId&gt;ojdbc6&lt;/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://bluejet.github.io/blog/2016/11/15/hello-octopress/">
+  <link rel="canonical" href="http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="有故事的地方" type="application/atom+xml">
@@ -70,7 +69,7 @@
   
   <header>
     
-      <h1 class="entry-title">Hello Octopress</h1>
+      <h1 class="entry-title">How to Upload Jar to Nexus3?</h1>
     
     
       <p class="meta">
@@ -79,7 +78,7 @@
 
 
 
-<time class='entry-date' datetime='2016-11-15T16:14:07+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:14 pm</span></time>
+<time class='entry-date' datetime='2017-03-16T19:42:48+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>7:42 pm</span></time>
         
            | <a href="#disqus_thread"
              data-disqus-identifier="http://bluejet.github.io">Comments</a>
@@ -89,7 +88,35 @@
   </header>
 
 
-<div class="entry-content"><p>Hello Github!</p>
+<div class="entry-content"><h1>Prepare pom.xml</h1>
+
+<pre><code>&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;oracle&lt;/groupId&gt;
+    &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/project&gt;
+</code></pre>
+
+<ol>
+<li><p>Upload pom.xml
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file pom.xml http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.pom</code></p></li>
+<li><p>Upload jar
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file ojdbc6-1.0.jar http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.jar</code></p></li>
+</ol>
+
+
+<h1>Exception</h1>
+
+<p>Resp: HTTP/1.1 413 Request Entity Too Large</p>
+
+<pre><code>vi /etc/nginx.conf
+# added the following lines in http section
+client_max_body_size 16M;
+client_body_buffer_size 128K;
+
+nginx -s reload
+</code></pre>
 </div>
 
 
@@ -105,15 +132,21 @@
 
 
 
-<time class='entry-date' datetime='2016-11-15T16:14:07+08:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>4:14 pm</span></time>
+<time class='entry-date' datetime='2017-03-16T19:42:48+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>7:42 pm</span></time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/nexus/'>nexus</a>, <a class='category' href='/blog/categories/nginx/'>nginx</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bluejet.github.io/blog/2016/11/15/hello-octopress/" data-via="" data-counturl="http://bluejet.github.io/blog/2016/11/15/hello-octopress/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/" data-via="" data-counturl="http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/" >Tweet</a>
   
   
   
@@ -122,8 +155,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2017/03/08/audio-tag-does-not-work-in-safari/" title="Previous Post: Audio tag does not work in Safari">&laquo; Audio tag does not work in Safari</a>
       
-        <a class="basic-alignment right" href="/blog/2017/03/08/audio-tag-does-not-work-in-safari/" title="Next Post: Audio tag does not work in Safari">Audio tag does not work in Safari &raquo;</a>
       
     </p>
   </footer>
@@ -192,8 +225,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://bluejet.github.io/blog/2016/11/15/hello-octopress/';
-        var disqus_url = 'http://bluejet.github.io/blog/2016/11/15/hello-octopress/';
+        var disqus_identifier = 'http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/';
+        var disqus_url = 'http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/';
         var disqus_script = 'embed.js';
       
     (function () {

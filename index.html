@@ -9,8 +9,7 @@
   <meta name="author" content="W·Wang">
 
   
-  <meta name="description" content="Test - 听听看，猜猜看 &lt;script&gt;
-(function() { function log(info) { console.log(info); } function safariPlay() { audioEl.load(); // iOS 9 load before &hellip;">
+  <meta name="description" content="Prepare pom.xml &lt;project&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;oracle&lt;/groupId&gt; &lt;artifactId&gt;ojdbc6&lt;/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -67,6 +66,66 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/03/16/how-to-upload-jar-to-nexus3/">How to Upload Jar to Nexus3?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-03-16T19:42:48+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>7:42 pm</span></time>
+        
+           | <a href="/blog/2017/03/16/how-to-upload-jar-to-nexus3/#disqus_thread"
+             data-disqus-identifier="http://bluejet.github.io/blog/2017/03/16/how-to-upload-jar-to-nexus3/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h1>Prepare pom.xml</h1>
+
+<pre><code>&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;oracle&lt;/groupId&gt;
+    &lt;artifactId&gt;ojdbc6&lt;/artifactId&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+&lt;/project&gt;
+</code></pre>
+
+<ol>
+<li><p>Upload pom.xml
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file pom.xml http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.pom</code></p></li>
+<li><p>Upload jar
+<code>curl -v -u admin:&lt;nexus-passwd&gt; --upload-file ojdbc6-1.0.jar http://&lt;host&gt;/nexus/repository/maven-releases/oracle/ojdbc6/1.0/ojdbc6-1.0.jar</code></p></li>
+</ol>
+
+
+<h1>Exception</h1>
+
+<p>Resp: HTTP/1.1 413 Request Entity Too Large</p>
+
+<pre><code>vi /etc/nginx.conf
+# added the following lines in http section
+client_max_body_size 16M;
+client_body_buffer_size 128K;
+
+nginx -s reload
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -239,6 +298,8 @@
     <ul id="categories">
         <li class='category'><a href='/blog/categories/audio/'>audio (1)</a></li>
 <li class='category'><a href='/blog/categories/html5/'>html5 (1)</a></li>
+<li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
+<li class='category'><a href='/blog/categories/nginx/'>nginx (1)</a></li>
 <li class='category'><a href='/blog/categories/safari/'>safari (1)</a></li>
 
     </ul>
@@ -246,6 +307,10 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/03/16/how-to-upload-jar-to-nexus3/">How to Upload Jar to Nexus3?</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2017/03/08/audio-tag-does-not-work-in-safari/">Audio Tag Does Not Work in Safari</a>
