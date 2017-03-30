@@ -9,7 +9,8 @@
   <meta name="author" content="W·Wang">
 
   
-  <meta name="description" content="Prepare pom.xml &lt;project&gt; &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;oracle&lt;/groupId&gt; &lt;artifactId&gt;ojdbc6&lt;/ &hellip;">
+  <meta name="description" content="sudo pip install ipython Error: Operation not permittaed Disabled SIP(System Integrity Protection) sudo reboot
+Command + R csrutil disable sudo &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -66,6 +67,65 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2017/03/30/install-ipython/">Install Ipython</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2017-03-30T18:29:14+08:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2017</span></span> <span class='time'>6:29 pm</span></time>
+        
+           | <a href="/blog/2017/03/30/install-ipython/#disqus_thread"
+             data-disqus-identifier="http://bluejet.github.io/blog/2017/03/30/install-ipython/">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><pre><code>sudo pip install ipython
+</code></pre>
+
+<p><code>Error: Operation not permittaed</code></p>
+
+<p>Disabled SIP(System Integrity Protection)</p>
+
+<pre><code>sudo reboot
+Command + R 
+csrutil disable 
+sudo reboot
+sudo pip install ipython
+ipython
+</code></pre>
+
+<p><code>Error:
+File "/Library/Python/2.7/site-packages/IPython/utils/terminal.py", line 22, in &lt;module&gt;
+    from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size</code></p>
+
+<pre><code>vi /Library/Python/2.7/site-packages/IPython/utils/terminal.py
+
+Line 22: from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size
+changed:
+Line 22: #from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size
+Line 23: from shutil_backports import get_terminal_size as _get_terminal_size
+</code></pre>
+
+<p>Done.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -298,8 +358,10 @@ nginx -s reload
     <ul id="categories">
         <li class='category'><a href='/blog/categories/audio/'>audio (1)</a></li>
 <li class='category'><a href='/blog/categories/html5/'>html5 (1)</a></li>
+<li class='category'><a href='/blog/categories/macos/'>macos (1)</a></li>
 <li class='category'><a href='/blog/categories/nexus/'>nexus (1)</a></li>
 <li class='category'><a href='/blog/categories/nginx/'>nginx (1)</a></li>
+<li class='category'><a href='/blog/categories/python/'>python (1)</a></li>
 <li class='category'><a href='/blog/categories/safari/'>safari (1)</a></li>
 
     </ul>
@@ -307,6 +369,10 @@ nginx -s reload
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2017/03/30/install-ipython/">Install Ipython</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2017/03/16/how-to-upload-jar-to-nexus3/">How to Upload Jar to Nexus3?</a>

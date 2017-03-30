@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Python | 有故事的地方]]></title>
+  <link href="http://bluejet.github.io/blog/categories/python/atom.xml" rel="self"/>
+  <link href="http://bluejet.github.io/"/>
+  <updated>2017-03-30T18:45:26+08:00</updated>
+  <id>http://bluejet.github.io/</id>
+  <author>
+    <name><![CDATA[W·Wang]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Install Ipython]]></title>
+    <link href="http://bluejet.github.io/blog/2017/03/30/install-ipython/"/>
+    <updated>2017-03-30T18:29:14+08:00</updated>
+    <id>http://bluejet.github.io/blog/2017/03/30/install-ipython</id>
+    <content type="html"><![CDATA[<pre><code>sudo pip install ipython
+</code></pre>
+
+<p><code>Error: Operation not permittaed</code></p>
+
+<p>Disabled SIP(System Integrity Protection)</p>
+
+<pre><code>sudo reboot
+Command + R 
+csrutil disable 
+sudo reboot
+sudo pip install ipython
+ipython
+</code></pre>
+
+<p><code>Error:
+File "/Library/Python/2.7/site-packages/IPython/utils/terminal.py", line 22, in &lt;module&gt;
+    from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size</code></p>
+
+<pre><code>vi /Library/Python/2.7/site-packages/IPython/utils/terminal.py
+
+Line 22: from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size
+changed:
+Line 22: #from backports.shutil_get_terminal_size import get_terminal_size as _get_terminal_size
+Line 23: from shutil_backports import get_terminal_size as _get_terminal_size
+</code></pre>
+
+<p>Done.</p>
+]]></content>
+  </entry>
+  
+</feed>
